@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(253, 240, 213);
+}
+
+header {
+  background-color: rgb(231, 111, 81);
+  width: 100%;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  height: 5rem;
+  /* text-align: center; */
+}
+header nav ul {
+  list-style: none;
+  margin: 1rem;
+}
+header nav ul li {
+  margin: 1rem;
+
+  display: inline;
+}
+.nav-links {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.nav-links:hover {
+  color: rgb(36, 157, 143);
+}
+main {
+  padding: 2rem;
+}
+.hero {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCONiCPwiap7CxzxQNLR8Un7Bh3AIWrDXGQQ1wnrCwAQ&s=10);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 22rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.hero div {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 0.8rem;
+}
+.hero h1 {
+  color: #4b1426;
+  margin: 0.5rem;
+}
+.hero p {
+  text-align: center;
+}
+.hero button {
+  background-color: #4b1426;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  margin: 0.5rem auto;
+  /* display: block; */
+  text-align: center;
+}
