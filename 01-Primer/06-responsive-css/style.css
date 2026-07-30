@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  position: relative;
+}
+#menu-toggle {
+  display: none;
+}
+.burger-menu {
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+}
+nav {
+  display: none;
+}
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+nav a:hover {
+  color: greenyellow;
+}
+#menu-toggle:checked ~ nav {
+  display: block;
+}
+main {
+  padding: 1rem;
+}
+.box {
+  background-color: beige;
+  border: 1px solid #333;
+  padding: 1.4rem;
+  margin-bottom: 1rem;
+}
+/* Desktop Styles */
+@media screen and (min-width: 768px) {
+  .burger-menu {
+    display: none;
+  }
+  nav {
+    display: inline-block;
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+  }
+  nav a {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  .box {
+    display: inline-block;
+    width: 32%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: teal;
+  }
+}
