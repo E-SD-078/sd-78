@@ -102,7 +102,7 @@ console.log(stringTwo === numTwo); //compare the data type and the value
 console.log(typeof stringTwo, typeof numTwo);
 console.log(stringTwo == numTwo); // compare the values only
 // we should always use === and !== instead of == and != when trying to check the values and data types
-console.log(2 !== '2');
+console.log(2 !== '2'); // "this will give true since number is not equal to string "
 console.log(2 != '2');
-// 'this will give true which is not correct since its checking on the values only not the data types thats why we use !== instead of !='
+// 'this will give false which is not correct since its checking on the values only not the data types thats why we use !== instead of !='
 console.log(3 <= 3);
