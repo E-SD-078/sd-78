@@ -78,3 +78,4 @@ console.info('Using a for...of loop:');
 for (const fruit of fruits) {
   console.log(`Current fruit: ${fruit}`);
 }
+console.log('this is test');
