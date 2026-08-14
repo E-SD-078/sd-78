@@ -100,9 +100,10 @@ const products = [
   { name: 'Headphones', price: 150, qty: 8 },
 ];
 
-const cartTotal = products.reduce((acc, { price, qty }) => {
+const cartTotal = products.reduce((acc, product) => {
+  const { price, qty } = product; //object destructuring
   console.log(acc, price, qty);
-  // acc = acc + price * qty;
+  // acc = acc + (price * qty);
   acc += price * qty;
   return acc;
 }, 0);
@@ -126,17 +127,33 @@ console.log('The original people array remains the same:', people);
 console.log('Updated People:', updatedPeople);
 
 const items = ['apple', 'banana', 'apple', 'orange', 'banana', 'banana'];
+// we are taking array of strings and we want to convert it to array of objects and each object will have the string as key and the value is how many times it was repeated
+const fruitCount = {};
+
+for (let index = 0; index < items.length; index++) {
+  const fruit = items[index]; //index=0 fruit= apple
+  if (fruitCount[fruit]) {
+    //we are checking if the object have a value for a key if not it will be undefined
+    fruitCount[fruit] = fruitCount[fruit] + 1;
+  } else {
+    // this part will run the first time we come across a new fruit
+    fruitCount[fruit] = 1;
+  }
+}
+console.log(fruitCount);
 
 console.info('Counting occurrences of each fruit:');
 const counts = items.reduce((acc, fruit) => {
   // acc[fruit] = (acc[fruit] || 0) + 1;// the first time acc[fruit] will be undefined so it will be 0 + 1 the time after it will be 1 + 1
   // acc[fruit] can either be undefined for the first time or 1,2,3,..
+  //ACC stands for {} fruit stands for the array items 'apple','banana'... acc[fruit] = {apple:1}
   if (acc[fruit]) {
+    //undefined,1,2,3
     acc[fruit] += 1;
   } else {
     acc[fruit] = 1;
   }
   // console.log(acc);
   return acc;
-}, {});
+}, {}); //{} is the init value for acc
 console.log('Counts:', counts); // {apple:2,banana:2...}
