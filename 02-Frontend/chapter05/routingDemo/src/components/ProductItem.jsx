@@ -2,13 +2,13 @@ import Header from './Header';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 const ProductItem = () => {
-  const { slug } = useParams();
+  const params = useParams(); //useParams return object with the dynamic route as key and the value is what in the url of the browser
   const [product, setProduct] = useState(null);
-  console.log(slug);
+  console.log(params);
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await fetch(`https://api.escuelajs.co/api/v1/products/slug/${slug}`);
+        const res = await fetch(`https://api.escuelajs.co/api/v1/products/slug/${params.slug}`);
         const data = await res.json();
         setProduct(data);
       } catch (error) {
