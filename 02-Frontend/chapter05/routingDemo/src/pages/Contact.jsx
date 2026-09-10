@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Header from './Header';
+
 import { useNavigate } from 'react-router';
 const Contact = () => {
   const [email, setEmail] = useState('');
@@ -12,7 +12,6 @@ const Contact = () => {
   };
   return (
     <>
-      <Header />
       <h2>Contact</h2>
       <form className='p-4 bg-gray-300 flex flex-col gap-4' onSubmit={handleSubmit}>
         <label htmlFor='email'>email</label>

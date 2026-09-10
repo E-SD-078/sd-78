@@ -1,10 +1,11 @@
 import { Link } from 'react-router';
-import Header from './Header';
+// import About from './About'; //same folder
+// import  MainLayout from '../layouts/MainLayout';//the other folder is the sibling of our folder
+// import Header from '@/components/Header';
 
 const Home = () => {
   return (
     <>
-      <Header />
       <h2>Home</h2>
       <Link
         to='/register'

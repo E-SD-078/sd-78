@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Header from './Header';
+
 import { useState } from 'react';
 import { Link } from 'react-router';
 const Products = () => {
@@ -19,7 +19,6 @@ const Products = () => {
 
   return (
     <>
-      <Header />
       <section className='grid grid-cols-3'>
         {products.map((product) => (
           <div key={product.id}>

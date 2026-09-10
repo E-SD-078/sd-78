@@ -1,4 +1,3 @@
-import Header from './Header';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 const ProductItem = () => {
@@ -19,7 +18,6 @@ const ProductItem = () => {
   }, []);
   return (
     <>
-      <Header />
       {product && (
         <div>
           <h2>{product.title}</h2>
