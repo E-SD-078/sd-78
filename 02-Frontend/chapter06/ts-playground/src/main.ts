@@ -1,7 +1,7 @@
 //type inference
 let age = 23;
 
-age = 'john';
+// age = 'john';
 console.log(age);
 //implicit type
 let name: string = 'mark';
@@ -27,7 +27,7 @@ students = [student1];
 console.log(students);
 let data: string;
 data = 'hello';
-data = 42; // ❌ Error: Type 'number' is not assignable to type 'string'
+// data = 42; // ❌ Error: Type 'number' is not assignable to type 'string'
 
 console.log(data);
 
@@ -82,7 +82,7 @@ const settings: { readonly theme: string } = {
   theme: 'dark',
 };
 
-settings.theme = 'light'; // ❌ Error: Cannot assign to 'theme' because it is a read-only property
+// settings.theme = 'light'; // ❌ Error: Cannot assign to 'theme' because it is a read-only property
 console.log(settings);
 type Product = {
   id: number;
@@ -125,7 +125,7 @@ function movePlayer(direction: Direction) {
 
 movePlayer('left'); // ✅
 movePlayer('down'); // ✅
-movePlayer('forward'); // ❌ Error: Argument of type '"forward"' is not assignable to type 'Direction'
+// movePlayer('forward'); // ❌ Error: Argument of type '"forward"' is not assignable to type 'Direction'
 
 // Example 3: Switch statement with exhaustive checking
 function handleDirection(dir: Direction) {
@@ -150,7 +150,7 @@ function handleDirection(dir: Direction) {
 }
 
 handleDirection('left');
-handleDirection('forward'); // ❌ Error: Argument of type '"forward"' is not assignable to type 'Direction'
+// handleDirection('forward'); // ❌ Error: Argument of type '"forward"' is not assignable to type 'Direction'
 type Greeter = (name: string) => string;
 type Comparator = (a: number, b: number) => number;
 type Log = 'error' | 'warn' | 'info' | 'log';
@@ -177,3 +177,26 @@ const errorLogger = createLogger('error');
 const warnLogger = createLogger('warn');
 errorLogger('Something broke'); // [ERROR] Something broke
 warnLogger('Something almost broke');
+type Post = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
+
+try {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = (await response.json()) as Post[];
+  throw new Error('adsfdasdf');
+  // Log the title of each post
+  posts.forEach((post) => {
+    console.log(`Post #${post.id}: ${post.title}`);
+    // console.log(`Post #${post.id}: ${post.title} ${post.somethingElse}`); // Property 'somethingElse' does not exist on type 'Post'
+  });
+} catch (error) {
+  if (error instanceof Error) {
+    console.error('Fetch failed:', error.message);
+  } else {
+    console.error('Unknown error occurred.');
+  }
+}
