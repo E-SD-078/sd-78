@@ -1,0 +1,14 @@
+{
+	"mcpServers": {
+		"mcp-aic-server": {
+			"type": "local",
+			"command": "node",
+			"args": [
+				"/Users/mahmoudkhudairi/Desktop/sd-78/03-Backend/chapter11/03-mcp-aic-server/dist/app.js"
+			],
+			"tools": [
+				"*"
+			]
+		}
+	}
+}
